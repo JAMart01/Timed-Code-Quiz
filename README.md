@@ -19,3 +19,4 @@ TBD
 ---
 
 ### Link to Valorant Quiz Game
+https://jamart01.github.io/Timed-Quiz-Game/
