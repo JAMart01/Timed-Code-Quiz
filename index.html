@@ -5,22 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>It's Quiz Time!</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Squada+One&display=swap" rel="stylesheet">
 </head>
 
+
+
 <body>
-    <header>
+    <header class="flex-head"> 
         <!-- Here on the intial page I'll put a way to view the high scores and add a timer that will be consistent throughout the quiz-->
+        <p id="hi-score"> Check Out Previous Scores</p>
+        <p id="countdown">Time: 999s</p>
         <!-- When the quiz starts I'll use DOM manipulation to hide the button that leads to high scores-->
     </header>
     
     <main>
-        <!-- Create an initial div that will hold a button to start the game, a header that says the name of the game, and a <p> element to give some information about the quiz -->
+        <!-- Create an initial div that will hold a button to start the game, an h1 that says the name of the game, and a <p> element to give some information about the quiz -->
+        <div class="flex" id="init-div">
+            <h1>Valorant Quiz</h1>
+            <p>
+                This quiz tests how much you know about the First-Person-Shooter Valorant.<br>
+                Do you know your Agents? Do you know your weapons? What about the different skin lines?<br>
+                Is your knowledge Iron level? Or is it worthy of the Radiant title?<br>
+                Put your skills to the test and see where you stack up.<br>
+            </p>
+            <button class= "button" id="start">Start Quiz</button>      
+        </div>
+
+        <!-- This div will hold all of the quiz questions-->
+        <div class="flex" id="game-div">
+
+        </div>
+
+        <!-- This div should only appear once the game has concluded-->
+        <div id="retry-div" style=display:none>
+
+            <p>
+                Great job, you made it through the quiz!<br>
+                Now that you've tested yourself there's a few things you can do.<br>
+                You can return to the home page, check your high score, and try again if you're not satisifed with it!
+            </p>
+
+            <button class="button" id="retry">Run It Back?</button>
+            <button class="button" id="home">Main Screen</button>
+        </div>
+        
         <!-- Then I'll use DOM manipulation to push out the code questions as well as the 4 buttons needed to interact with the quiz-->
         
     </main>
     
 
 
-    
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+
+@font-face {
+    font-family: ValoFont;
+    src: url("/Weekly Challenges/Week 4 Challenge/Timed-Code-Quiz/assets/fonts/Valorant_Font.ttf") format("truetype");
+}
+
+body {
+    background-color: #111723;
+    color: #FFFBF5;
+    margin:0;
+    padding:0;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.flex-head {
+    display: flex;
+    justify-content: space-between;
+    font-family: Squada One, cursive;
+    font-size: 30px;
+    background-color: #ff4656;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+main div h1 {
+    color: #FFFBF5;
+    font-family: ValoFont;
+    font-size: 50px;
+}
+
+main div p {
+    font-size: 25px;
+    font-family: Squada One, cursive;
+}
+
+#retry-div {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    font-size: 24px;
+    background-color: #ff4656;
+    padding: 14px 40px;
+    border-radius: 4px;
+    font-family: ValoFont;
+}
+
+
+/* I'm going to hide this when the quiz begins #hi-score */
