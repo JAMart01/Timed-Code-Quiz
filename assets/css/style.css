@@ -28,22 +28,24 @@ body {
     padding-right: 25px;
 }
 
-
 main div h1 {
     color: #FFFBF5;
     font-family: ValoFont;
     font-size: 50px;
+    padding-top: 150px;
 }
 
 main div p {
     font-size: 25px;
     font-family: Squada One, cursive;
+    padding-bottom: 15px;
 }
 
 #retry-div {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding-top: 100px;
 }
 
 .button {

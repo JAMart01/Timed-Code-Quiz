@@ -12,17 +12,18 @@
 
 
 
+
 <body>
     <header class="flex-head"> 
         <!-- Here on the intial page I'll put a way to view the high scores and add a timer that will be consistent throughout the quiz-->
         <p id="hi-score"> Check Out Previous Scores</p>
-        <p id="countdown">Time: 999s</p>
+        <p id="countdown">Time: <span id="timer">10</span></p>
         <!-- When the quiz starts I'll use DOM manipulation to hide the button that leads to high scores-->
     </header>
     
     <main>
         <!-- Create an initial div that will hold a button to start the game, an h1 that says the name of the game, and a <p> element to give some information about the quiz -->
-        <div class="flex" id="init-div">
+        <div class="flex init-div" id="init-div">
             <h1>Valorant Quiz</h1>
             <p>
                 This quiz tests how much you know about the First-Person-Shooter Valorant.<br>
@@ -34,12 +35,13 @@
         </div>
 
         <!-- This div will hold all of the quiz questions-->
-        <div class="flex" id="game-div">
-
+        <div id="game-div" style="display:none">
+            <h2 id="game-question"></h2>
+            <div id="game-choices"></div>
         </div>
 
         <!-- This div should only appear once the game has concluded-->
-        <div id="retry-div" style=display:none>
+        <div id="retry-div" style="display:none">
 
             <p>
                 Great job, you made it through the quiz!<br>
