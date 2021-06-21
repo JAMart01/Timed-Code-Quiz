@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     font-family: Squada One, cursive;
-    font-size: 30px;
+    font-size: 40px;
     background-color: #ff4656;
     padding-left: 25px;
     padding-right: 25px;
@@ -56,5 +56,31 @@ main div p {
     font-family: ValoFont;
 }
 
+.choiceStyle {
 
+    font-size: 24px;
+    background-color: #ff4656;
+    padding: 14px 40px;
+    border-radius: 4px;
+    font-family: Squada One, cursive;
+    font-weight: lighter;
+    justify-content: space-around;
+}
+
+#stats {
+    flex-direction: column;
+    align-items: center;
+    color: #FFFBF5;
+    font-family: Squada One, cursive;
+    font-size: 25px;
+
+}
+
+#game-div {
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: Squada One, cursive;
+    font-size: 35px;
+
+}
 /* I'm going to hide this when the quiz begins #hi-score */

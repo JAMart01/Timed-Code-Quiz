@@ -16,8 +16,7 @@
 <body>
     <header class="flex-head"> 
         <!-- Here on the intial page I'll put a way to view the high scores and add a timer that will be consistent throughout the quiz-->
-        <p id="hi-score"> Check Out Previous Scores</p>
-        <p id="countdown">Time: <span id="timer">10</span></p>
+        <p id="countdown">Time: <span id="timer">90</span></p>
         <!-- When the quiz starts I'll use DOM manipulation to hide the button that leads to high scores-->
     </header>
     
@@ -31,7 +30,8 @@
                 Is your knowledge Iron level? Or is it worthy of the Radiant title?<br>
                 Put your skills to the test and see where you stack up.<br>
             </p>
-            <button class= "button" id="start">Start Quiz</button>      
+            <button class= "button" id="start">Start Quiz</button>    
+            <button class="button" id="scores">View Previous Scores</button>  
         </div>
 
         <!-- This div will hold all of the quiz questions-->
@@ -42,15 +42,20 @@
 
         <!-- This div should only appear once the game has concluded-->
         <div id="retry-div" style="display:none">
+        </div>
 
+        <div id ="stats" style="display: none">
+            <h2 id="showScore"></h2>
+            <form>
+                <label for="initials">Enter your initials to save your score!</label>
+                <input type="text" id="initials" name="initials">
+                <input type="submit" value="Submit">
+            </form>
             <p>
                 Great job, you made it through the quiz!<br>
-                Now that you've tested yourself there's a few things you can do.<br>
-                You can return to the home page, check your high score, and try again if you're not satisifed with it!
+                Now that you've tested yourself you should try again<br>
+                if you're not satisfied with your score. 
             </p>
-
-            <button class="button" id="retry">Run It Back?</button>
-            <button class="button" id="home">Main Screen</button>
         </div>
         
         <!-- Then I'll use DOM manipulation to push out the code questions as well as the 4 buttons needed to interact with the quiz-->

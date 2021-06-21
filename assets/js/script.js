@@ -54,13 +54,17 @@ var timerEl = document.getElementById("timer");
 
 var displayQuestion = document.getElementById("game-question");
 
-var displayChoices = document.getElementById("game-choices")
+var displayChoices = document.getElementById("game-choices");
+
+var statScreen = document.getElementById("stats");
+
+var scoreDiv =document.getElementById("showScore");
 
 var numOfQuestions = questions.length;
 
 var totalQs;
 
-var currentQuestion;
+var currentQuestion = questions[totalQs];
 
 var correctAnswers;
 
@@ -76,7 +80,7 @@ function startQuiz() {
     gameScreen.style.display = "block";
     totalQs = 0;
     correctAnswers= 0;
-    showQuestion();
+    showQuestions();
 };
 
 function emptyQuestions() {
@@ -90,65 +94,54 @@ function showQuestions() {
     currentQuestion = questions[totalQs];
     var pos = totalQs + 1;
     displayQuestion.textContent = "Question " + pos + " out of " + numOfQuestions;
-    var question = document.createElement("h2");
-    question.textContent = currentQuestion.question;
-    gameScreen.appendChild(question);
-    displayQuestionChoices();
+    var genQuestion = document.createElement("h2");
+    genQuestion.textContent = currentQuestion.question;
+    gameScreen.appendChild(genQuestion);
+    showQuestionChoices();
 };
 
 // contains all of the logic for the game to display the choices on the gameScreen div
 function showQuestionChoices() {
     for (let i = 0; i < currentQuestion.choices.length; i++) {
-        var choice = document.createElement("h4");
-        choice.setAttribute("class", "choiceStyle");
-        choice.setAttribute("data-value", currentQuestion.choices[i]);
-        choice.textContent = currentQuestion.choices[i];
-        gameScreen.appendChild(choice);
+        var genChoice = document.createElement("button");
+        genChoice.setAttribute("class", "choiceStyle");
+        genChoice.setAttribute("data-value", currentQuestion.choices[i]);
+        genChoice.textContent = currentQuestion.choices[i];
+        gameScreen.appendChild(genChoice);
     }
 };
 
 function compareAnswers(chosenAnswer) {
     if (chosenAnswer === currentQuestion.answer) {
         correctAnswers++;
-        counter++;
+        totalQs++;
         playOrEnd();
     }
     else {
-        counter++;
+        totalQs++;
         playOrEnd();
     }
 };
 
 function playOrEnd() {
-    if (counter === numOfQuestions) {
-        // showStats();
+    if (totalQs === numOfQuestions) {
+        endGame();
     }
     else { 
-        displayQuestion();
+        showQuestions();
     }
 };
 
-// function showStats() {
-//     gameScreen.style.display 
-// }
 
 // Will be called at the end of the game once the timer hits 0 or if all question are answered to create 
 // save the users score as well as show them a list of high scores
 // and to ask them if they would like to play again
+
 function endGame() {
     gameScreen.style.display="none";
-    retryScreen.style.display="flex";
-
-    timerEl.textContent = "10";
-};
-
-
-// Will be run when the user clicks the main screen button in the end game function
-// It will return the user back to the main screen, resetting timer and questions as well as displaying the initial div
-function returnHome() {
-    retryScreen.style.display="none";
-    
-    homeScreen.style.display= "flex";
+    statScreen.style.display="flex";
+    timerEl.textContent = "90";
+    scoreDiv.textContent= "You scored " + correctAnswers + " out of " + numOfQuestions;
 };
 
 // This function will initiate the countdown. If a user clicks a question that has the id of wrong then the timer will
@@ -156,7 +149,7 @@ function returnHome() {
 
 function quizCountdown() {
     
-    var timeLeft = 10;
+    var timeLeft = 90;
 
     var timeDown = setInterval(function() {
 
@@ -184,16 +177,10 @@ startButton.addEventListener('click', function() {
     startQuiz();
 });
 
-retryButton.addEventListener("click", function() {
-    startQuiz();
-});
-
-homeButton.addEventListener("click", function () { 
-    returnHome();
-});
-
 gameScreen.addEventListener("click", function(e) {
-    if(e.target.matches("h4")) {
+    e.preventDefault();
+    console.log("IT WORKS!!!");
+    if(e.target.matches("button")) {
         var chosenAnswer = e.target.getAttribute("data-value");
         compareAnswers(chosenAnswer);
     }
