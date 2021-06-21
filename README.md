@@ -1,7 +1,6 @@
 # Timed-Quiz-Game
 
-INSERT SCREENSHOT HERE
-
+![image](https://user-images.githubusercontent.com/81602695/122699493-84430e80-d217-11eb-8f46-bb2d614a806c.png)
 ---
 
 ## What it does
@@ -14,7 +13,7 @@ At the end of the game the players score is saved to localStorage and they are g
 
 ### Known Issues
 
-TBD
+I wasn't able to implement the localStorage to save user's scores as a result the button to view previous scores isn't functional. 
 
 ---
 
